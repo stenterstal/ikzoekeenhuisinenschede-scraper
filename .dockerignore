@@ -1,0 +1,8 @@
+node_modules
+.env
+.eslintrc
+.prettierrc
+advertisements.db
+nodemon.json
+tsconfig.json
+yarn.log

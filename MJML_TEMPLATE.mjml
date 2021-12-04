@@ -1,0 +1,119 @@
+<mjml>
+
+    <mj-head>
+
+        <mj-font name="Raleway" href="https://fonts.googleapis.com/css?family=Raleway" />
+
+    </mj-head>
+
+    <mj-body background-color="#121212">
+
+        <mj-section>
+
+            <mj-column>
+
+                <mj-text color="#03A66A" font-weight="900" font-size="28px">
+
+                    {{var:amount}} nieuwe woningen gevonden
+
+                </mj-text>
+
+                <mj-text color="#F2F2F2" font-size="16px">
+
+                    Gevonden op 29 November
+
+                </mj-text>
+
+                <mj-divider border-color="#F2F2F2" border-width="2px" />
+
+            </mj-column>
+
+        </mj-section>
+
+        <mj-raw>{% for advertisement in var:advertisements %}</mj-raw>
+
+        <mj-hero background-color="#121212">
+
+            <mj-text font-weight="700" font-size="20px">
+
+                <a style="color: #03A66A" href="{{advertisement.link}}">
+
+                    {{advertisement.name}}
+
+                </a>
+
+            </mj-text>
+
+        </mj-hero>
+
+        <mj-section>
+
+            <mj-column>
+
+                <mj-image width="300px" align="left" src="{{advertisement.imageLink}}" />
+
+            </mj-column>
+
+            <mj-column>
+
+                <mj-text font-size="16px" color="#F2F2F2">
+
+                    {{advertisement.respondUntil}}
+
+                </mj-text>
+
+                <mj-text font-size="16px" color="#F2F2F2">
+
+                    {{advertisement.bedrooms}} Slaapkamers
+
+                </mj-text>
+
+                <mj-table color="#FFF" font-size="14px">
+
+                    <tr>
+
+                        <td>Huur voor huurtoeslag:</td>
+
+                        <td style="color: #03A66A">€{{advertisement.allowancePrice}}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Netto huur:</td>
+
+                        <td style="color: #03A66A">€{{advertisement.price}}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Kale huur:</td>
+
+                        <td style="color: #03A66A">€{{advertisement.flatPrice}}</td>
+
+                    </tr>
+
+                </mj-table>
+
+            </mj-column>
+
+        </mj-section>
+
+        <mj-hero background-color="#121212">
+
+            <mj-button font-family="Helvetica" background-color="#04D88A" color="white" width="100%">
+                <a href="{{advertisement.link}}" style="color:#FFF;text-decoration:none;font-size:16px;">
+                    Bekijken
+                </a>
+            </mj-button>
+
+            <mj-divider border-color="#F2F2F2" border-width="2px" />
+
+        </mj-hero>
+
+        <mj-raw>{% endfor %}</mj-raw>
+
+    </mj-body>
+
+</mjml>
