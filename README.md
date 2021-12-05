@@ -48,7 +48,9 @@ $ npm start
 
 ### Docker
 
-If you want to use this project as a docker image you will need `docker` installed (duh). Enter the following commands from the command line
+If you want to use this project as a docker image you will need `docker` installed (duh). You can build the image locally or use the one hosted on [Docker Hub](https://hub.docker.com/r/stenterstal/ikzoekeenhuisinenschede-scraper)
+
+Enter the following commands from the command line to build the image locally:
 
 ```bash
 # Clone this repository
