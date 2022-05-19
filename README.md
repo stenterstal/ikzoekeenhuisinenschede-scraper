@@ -50,6 +50,8 @@ $ npm start
 
 If you want to use this project as a docker image you will need `docker` installed (duh). You can build the image locally or use the one hosted on [Docker Hub](https://hub.docker.com/r/stenterstal/ikzoekeenhuisinenschede-scraper)
 
+#### Dockerfile
+
 Enter the following commands from the command line to build the image locally:
 
 ```bash
@@ -65,6 +67,25 @@ $ docker build . -t <image-name>
 # Create container using the created image and read the environment variables from a file
 # (!) Make sure you have set all the environment variables and configured mailjet
 $ docker run --name <container-name> --env-file <path-to-env> <image-name>
+```
+
+#### Docker-compose
+```
+version: "3"
+services:
+  housing-scraper:
+    image: stenterstal/ikzoekeenhuisinenschede-scraper
+    container_name: housing-scraper
+    restart: unless-stopped
+    environment:
+      - DEV_MODE=false
+      - PRICE_FROM=100
+      - PRICE_TO=633
+      - CRON_FORMAT=0 6 * * MON,WED,FRI
+      - EMAIL=
+      - MAILJET_TEMPLATE_ID=
+      - MAILJET_API_KEY=
+      - MAILJET_SECRET_KEY=
 ```
 
 ## Setup
