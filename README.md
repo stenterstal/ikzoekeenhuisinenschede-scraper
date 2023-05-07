@@ -1,3 +1,6 @@
+| :exclamation:  Deprecation warning: ikzoekeenhuisinenschede.nl has been replaced with woninghuren.nl, this repository no longer works   |
+|-----------------------------------------|
+
 <h1 align="center">
   Ikzoekeenhuisinenschede-scraper
   <br>
